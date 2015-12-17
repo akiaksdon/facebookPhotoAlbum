@@ -1,3 +1,8 @@
+<html>
+ <head>
+  <title>PHP Test</title>
+ </head>
+ <body>
 <?php
 require_once __DIR__ . '/vendor/autoload.php'
 
@@ -17,12 +22,6 @@ echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 
 ?>
 
-
-<html>
- <head>
-  <title>PHP Test</title>
- </head>
- <body>
  <?php echo '<p>Hello World</p>'; ?> 
  </body>
 </html>
