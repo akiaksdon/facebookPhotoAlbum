@@ -1,4 +1,9 @@
-<?php
+<html>
+ <head>
+  <title>PHP Test</title>
+ </head>
+ <body>
+   <?php
 require_once __DIR__ . '/vendor/autoload.php'
 
 session_start()
@@ -16,13 +21,6 @@ $loginUrl = $helper->getLoginUrl('http://phpstack-14183-30913-76146.cloudwaysapp
 echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 
 ?>
-
-
-<html>
- <head>
-  <title>PHP Test</title>
- </head>
- <body>
  <?php echo '<p>Hello World</p>'; ?> 
  </body>
 </html>
