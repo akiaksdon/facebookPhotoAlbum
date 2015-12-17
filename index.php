@@ -6,7 +6,7 @@
  
  <?php
 session_start();
-require_once __DIR__ . '/vendor/Facebook/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 $fb = new Facebook\Facebook([
   'app_id' => '1666988080247658',
@@ -85,5 +85,6 @@ if (isset($accessToken)) {
 	$loginUrl = $helper->getLoginUrl('phpstack-14183-30913-76146.cloudwaysapps.com', $permissions);
 	echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 }
+?>
  </body>
 </html>
