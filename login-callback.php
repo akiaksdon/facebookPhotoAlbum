@@ -68,14 +68,13 @@ try {
 $albumEdge = $response->getGraphEdge();
 //print_r($albumEdge);
 
-foreach(albumEdge as album){
-  var_dump($album->asArray());
+foreach ($albumEdge as $album) {
+    var_dump($album->asArray());
 
-  $data = $album['data'];
-  do {
+    $data = $album['data'];
+    do {
       echo '<p>data:</p>' . "\n\n";
-      var_dump($likes->asArray());
-    } while ($data = $fb->next($data));
+      var_dump($data->asArray());
+    } while ($likes = $fb->next($data));
   }
-
 ?>
