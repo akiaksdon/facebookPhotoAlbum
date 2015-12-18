@@ -50,4 +50,21 @@ $userName = $userNode->getName();
 $userId = $userNode->getId();
 echo 'https://graph.facebook.com/'.$userId.'/picture';
 echo $userId;
+
+// try getting albums links
+$request = $fb->request('GET', '/'.$userId.'/albums');
+try {
+  $response = $fb->getClient()->sendRequest($request);
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  // When Graph returns an error
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  // When validation fails or other local issues
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
+
+$graphNode = $response->getGraphNode();
+print_r($graphNode);
 ?>
