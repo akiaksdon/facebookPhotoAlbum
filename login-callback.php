@@ -48,7 +48,7 @@ echo 'Logged in as ' . $userNode->getName();
 
 try {
   $response = $fb->get('/me/albums');
-  $graphObject = $response->getGraphObject();
+  $graphEdge = $response->getGraphEdge();
   } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -59,5 +59,5 @@ try {
   exit;
 }
 
-print_r($graphObject);
+print_r($graphEdge);
 ?>
