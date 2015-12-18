@@ -43,11 +43,15 @@ try {
   exit;
 }
 
-echo 'Logged in as ' . $userNode->getId();
+echo 'Logged in as ' . $userNode->getName();
 
+$userName = $userNode->getName();
+$userId = $userNode->getId();
+echo 'https://graph.facebook.com/'.$user_id.'/picture';
+echo $userId;
 
 try {
-  $response = $fb->get('/me/albums');
+  $response = $fb->get('/'.$userId.'/albums');
   $graphObject = $response->getGraphObject()->asArray();
   } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
