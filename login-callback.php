@@ -43,7 +43,7 @@ try {
   exit;
 }
 
-echo 'Logged in as ' . $userNode->getName();
+echo 'Logged in as ' . $userNode->getId();
 
 
 try {
