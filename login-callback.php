@@ -70,7 +70,9 @@ $albumEdge = $response->getGraphEdge();
 
 foreach ($albumEdge as $album) {
     $singleAlbumNode = $album->asArray();
-    echo $singleAlbumNode[2];
+    foreach ($singleAlbumNode as $key => $value) {
+      echo $key .'='.$value;
+    }
     var_dump($singleAlbumNode);
   }
 ?>
