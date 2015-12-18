@@ -3,16 +3,6 @@
   <title>PHP Test</title>
  </head>
  <body>
-
-
-
-
-
-
-
-
-
-
  
  <?php
 session_start();
@@ -31,10 +21,6 @@ $loginUrl = $helper->getLoginUrl('http://phpstack-14183-30913-76146.cloudwaysapp
 
 echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 ?>
-
-
-
-
 
  </body>
 </html>
