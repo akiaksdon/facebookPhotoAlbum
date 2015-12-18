@@ -29,6 +29,7 @@ if (isset($accessToken)) {
   // access token from $_SESSION['facebook_access_token']
 }
 $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
+
 try {
   $response = $fb->get('/me');
   $userNode = $response->getGraphUser();
@@ -43,4 +44,23 @@ try {
 }
 
 echo 'Logged in as ' . $userNode->getName();
+
+//get albums using request
+
+$request = $fb->request('GET', '/me/albums');
+// Send the request to Graph
+try {
+  $response = $fb->getClient()->sendRequest($request);
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  // When Graph returns an error
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  // When validation fails or other local issues
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
+
+$graphNode = $response->getGraphNode();
+echo $graphNode;
 ?>
