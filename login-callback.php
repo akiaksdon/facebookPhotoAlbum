@@ -65,6 +65,6 @@ try {
   exit;
 }
 
-$graphNode = $response->getGraphNode();
-print_r($graphNode);
+$graphEdge = $response->getGraphEdge();
+print_r($graphEdge);
 ?>
