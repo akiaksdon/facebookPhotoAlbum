@@ -78,5 +78,4 @@ foreach(albumEdge as album){
     } while ($data = $fb->next($data));
   }
 
-}
 ?>
