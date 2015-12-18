@@ -30,8 +30,7 @@ if (isset($accessToken)) {
 }
 $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
 
-$session = new FacebookSession( $_SESSION['facebook_access_token']);
-$request_user_details = new FacebookRequest( $session, 'GET', '/me?fields=id,name' );
+$request_user_details = new FacebookRequest( $_SESSION['facebook_access_token'], 'GET', '/me?fields=id,name' );
       $response_user_details = $request_user_details->execute();
       $user_details = $response_user_details->getGraphObject()->asArray();
       
