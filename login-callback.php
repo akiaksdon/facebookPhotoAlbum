@@ -70,11 +70,5 @@ $albumEdge = $response->getGraphEdge();
 
 foreach ($albumEdge as $album) {
     var_dump($album->asArray());
-
-    $data = $album['data'];
-    do {
-      echo '<p>data:</p>' . "\n\n";
-      var_dump($data->asArray());
-    } while ($likes = $fb->next($data));
   }
 ?>
