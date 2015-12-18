@@ -62,5 +62,5 @@ try {
 }
 
 $graphNode = $response->getGraphNode();
-echo $graphNode;
+print_r($graphNode);
 ?>
