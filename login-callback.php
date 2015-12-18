@@ -45,13 +45,11 @@ try {
 
 echo 'Logged in as ' . $userNode->getName();
 
-//get albums using request
 
-$request = $fb->request('GET', '/me/albums');
-// Send the request to Graph
 try {
-  $response = $fb->getClient()->sendRequest($request);
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  $response = $fb->get('/me/albums');
+  $graphObject = $response->getGraphObject();
+  } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
   exit;
@@ -61,6 +59,5 @@ try {
   exit;
 }
 
-$graphEdge = $response->getGraphEdge();
-print_r($graphEdge);
+print_r($graphObject);
 ?>
