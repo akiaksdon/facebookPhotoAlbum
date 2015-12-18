@@ -30,23 +30,13 @@ if (isset($accessToken)) {
 }
 $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
 
-try {
-  $response = $fb->get('/me');
-  $userNode = $response->getGraphUser();
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
-  // When Graph returns an error
-  echo 'Graph returned an error: ' . $e->getMessage();
-  exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
-  // When validation fails or other local issues
-  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-  exit;
-}
+$session = new FacebookSession( $_SESSION['facebook_access_token']);
+$request_user_details = new FacebookRequest( $session, 'GET', '/me?fields=id,name' );
+      $response_user_details = $request_user_details->execute();
+      $user_details = $response_user_details->getGraphObject()->asArray();
+      
+      $user_id = $user_details['id'];
+      $user_name = $user_details['name'];
 
-echo 'Logged in as ' . $userNode->getName();
-
-$userName = $userNode->getName();
-$userId = $userNode->getId();
-echo 'https://graph.facebook.com/'.$userId.'/picture';
-echo $userId;
+      echo $user_name;
 ?>
