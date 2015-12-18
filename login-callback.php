@@ -69,6 +69,8 @@ $albumEdge = $response->getGraphEdge();
 //print_r($albumEdge);
 
 foreach ($albumEdge as $album) {
+    $singleAlbumNode = $album->asArray();
+    echo $singleAlbumNode->getId();
     var_dump($album->asArray());
   }
 ?>
