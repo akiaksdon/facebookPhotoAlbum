@@ -47,6 +47,6 @@ echo 'Logged in as ' . $userNode->getName();
 
 $userName = $userNode->getName();
 $userId = $userNode->getId();
-echo 'https://graph.facebook.com/'.$user_id.'/picture';
+echo 'https://graph.facebook.com/'.$userId.'/picture';
 echo $userId;
 ?>
