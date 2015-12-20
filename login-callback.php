@@ -30,10 +30,10 @@ if (isset($accessToken)) {
 }
 $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
 
-$request = $fb->request('GET', '/me');
+$request = $fb->request('GET', '/me?fields=id,name');
 try {
   $response = $fb->getClient()->sendRequest($request);
-  $userNode = $response->getGraphUser();
+  $userNode = $response->getGraphUser()->asArray();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
   // When Graph returns an error
   echo 'Graph returned an error: ' . $e->getMessage();
@@ -43,13 +43,15 @@ try {
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
+echo '\n '.$userNode['id'];
+echo '\n'.$userNode['name'];
+//echo '\n Logged in as ' . $userNode->getName();
 
-echo 'Logged in as ' . $userNode->getName();
+//$userName = $userNode->getName();
+//$userId = $userNode->getId();
 
-$userName = $userNode->getName();
-$userId = $userNode->getId();
-echo 'https://graph.facebook.com/'.$userId.'/picture';
-echo $userId;
+//echo '\n https://graph.facebook.com/'.$userId.'/picture';
+//echo $userId;
 
 // try getting albums links
 $request = $fb->request('GET', '/'.$userId.'/albums');
@@ -72,7 +74,7 @@ foreach ($albumEdge as $album) {
     $singleAlbumNode = $album->asArray();
     foreach ($singleAlbumNode as $key => $value) {
       if($key == 'id')
-      echo $key .'='.$value;
+      echo '\n '.$key .'='.$value;
     }
     var_dump($singleAlbumNode);
   }
