@@ -43,8 +43,8 @@ try {
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
-echo "\n $userNode['id']";
-echo "\n $userNode['name']";
+echo "\n". $userNode['id'];
+echo "\n".$userNode['name'];
 //echo '\n Logged in as ' . $userNode->getName();
 
 //$userName = $userNode->getName();
