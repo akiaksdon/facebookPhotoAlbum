@@ -1,4 +1,9 @@
-<?php
+<html>
+ <head>
+  <title>PHP Test</title>
+ </head>
+ <body>
+ <?php
 session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -44,16 +49,13 @@ try {
   exit;
 }
 echo "\n". $userNode['id'];
-echo "\n".$userNode['name'];
-//echo '\n Logged in as ' . $userNode->getName();
+echo "\n welcome ".$userNode['name'];
+$userId = $userNode['id'];
 
-//$userName = $userNode->getName();
-//$userId = $userNode->getId();
+echo '\n https://graph.facebook.com/'.$userId.'/picture';
 
-//echo '\n https://graph.facebook.com/'.$userId.'/picture';
-//echo $userId;
 
-/** try getting albums links
+// getting albums links and album id
 $request = $fb->request('GET', '/'.$userId.'/albums');
 try {
   $response = $fb->getClient()->sendRequest($request);
@@ -70,6 +72,7 @@ try {
 
 $albumEdge = $response->getGraphEdge();
 //print_r($albumEdge);
+//get all album ids
 
 foreach ($albumEdge as $album) {
     $singleAlbumNode = $album->asArray();
@@ -77,7 +80,10 @@ foreach ($albumEdge as $album) {
       if($key == 'id')
       echo '\n '.$key .'='.$value;
     }
-    var_dump($singleAlbumNode);
+    //var_dump($singleAlbumNode);
   }
   **/
 ?>
+<img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>"/>
+ </body>
+</html>
