@@ -82,7 +82,6 @@ foreach ($albumEdge as $album) {
     }
     //var_dump($singleAlbumNode);
   }
-  **/
 ?>
 <img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>"/>
  </body>
