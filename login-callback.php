@@ -53,7 +53,7 @@ echo '\n'.$userNode['name'];
 //echo '\n https://graph.facebook.com/'.$userId.'/picture';
 //echo $userId;
 
-// try getting albums links
+/** try getting albums links
 $request = $fb->request('GET', '/'.$userId.'/albums');
 try {
   $response = $fb->getClient()->sendRequest($request);
@@ -67,6 +67,7 @@ try {
   exit;
 }
 
+
 $albumEdge = $response->getGraphEdge();
 //print_r($albumEdge);
 
@@ -78,4 +79,5 @@ foreach ($albumEdge as $album) {
     }
     var_dump($singleAlbumNode);
   }
+  **/
 ?>
