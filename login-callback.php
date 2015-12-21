@@ -75,7 +75,7 @@ $albumEdge = $response->getGraphEdge()->asArray();
 //get all album ids
 
 foreach ($albumEdge as $album) {
-    $singleAlbumNode = $album->asArray();
+    $singleAlbumNode = (array) $album;
     echo $SingleAlbumNode['id'];
   }
 ?>
