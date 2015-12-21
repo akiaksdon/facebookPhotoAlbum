@@ -76,7 +76,7 @@ $albumEdge = $response->getGraphEdge()->asArray();
 
 foreach ($albumEdge as $album) {
     $album = (array) $album;
-    echo '<br />'.$album['id'];
+    echo '<br />'.$album['id'].'  '.$album['name'];
   }
 ?>
 <img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>"/>
