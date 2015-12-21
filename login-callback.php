@@ -58,8 +58,19 @@ echo "\n welcome ".$userNode['name'];
 $userId = $userNode['id'];
 ?>
 
-
-<img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>" class="img-rounded"/>
+<div class="container">
+  <div class="row">
+        <div class="profile-header-container">   
+        <div class="profile-header-img">
+                <img class="img-circle" src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>" />
+                <!-- badge -->
+                <div class="rank-label-container">
+                    <span class="label label-default rank-label"><?php echo $userNode['name'];?></span>
+                </div>
+            </div>
+        </div> 
+  </div>
+</div>
 
 <?php
 
