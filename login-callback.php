@@ -78,7 +78,8 @@ foreach ($albumEdge as $album) {
     $singleAlbumNode = $album->asArray();
     foreach ($singleAlbumNode as $key => $value) {
       if($key == 'id')
- //     echo '<br /> '.$key .'='.$value;
+     //echo '<br /> '.$key .'='.$value;
+        $albumsId[]=$value;
     }
     //var_dump($singleAlbumNode);
   }
