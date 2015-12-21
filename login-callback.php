@@ -48,11 +48,11 @@ try {
   echo 'Facebook SDK returned an error: ' . $e->getMessage();
   exit;
 }
-echo "\n". $userNode['id'];
+//echo "\n". $userNode['id'];
 echo "\n welcome ".$userNode['name'];
 $userId = $userNode['id'];
 
-echo '\n https://graph.facebook.com/'.$userId.'/picture';
+//echo '<br /> https://graph.facebook.com/'.$userId.'/picture ' ;
 
 
 // getting albums links and album id
@@ -78,7 +78,7 @@ foreach ($albumEdge as $album) {
     $singleAlbumNode = $album->asArray();
     foreach ($singleAlbumNode as $key => $value) {
       if($key == 'id')
-      echo '\n '.$key .'='.$value;
+ //     echo '<br /> '.$key .'='.$value;
     }
     //var_dump($singleAlbumNode);
   }
