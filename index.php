@@ -26,7 +26,7 @@ $loginUrl = $helper->getLoginUrl('http://phpstack-14183-30913-76146.cloudwaysapp
 <div class="container">
   <div class="row">
     <h1 class="text-center">Facebook Albums Assignment</h1>
-        <p class="text-center"><a href="<?php echo '.$loginUrl.';?>" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Log in with Facebook!</a></p>
+        <p class="text-center"><a href="<?php echo $loginUrl ;?>" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Log in with Facebook!</a></p>
   </div>
 </div>
  </body>
