@@ -51,9 +51,12 @@ try {
 //echo "\n". $userNode['id'];
 echo "\n welcome ".$userNode['name'];
 $userId = $userNode['id'];
+?>
 
-//echo '<br /> https://graph.facebook.com/'.$userId.'/picture ' ;
 
+<img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>"/>
+
+<?php
 
 // getting albums links and album id
 $request = $fb->request('GET', '/'.$userId.'/albums?fields=id,cover_photo,name');
@@ -79,6 +82,6 @@ foreach ($albumEdge as $album) {
     echo '<br />'.$album['id'].'  '.$album['name'];
   }
 ?>
-<img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>"/>
+
  </body>
 </html>
