@@ -56,7 +56,7 @@ $userId = $userNode['id'];
 
 
 // getting albums links and album id
-$request = $fb->request('GET', '/'.$userId.'/albums');
+$request = $fb->request('GET', '/'.$userId.'/albums?fields=id,cover_photo,name');
 try {
   $response = $fb->getClient()->sendRequest($request);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -70,18 +70,13 @@ try {
 }
 
 
-$albumEdge = $response->getGraphEdge();
+$albumEdge = $response->getGraphEdge()->asArray();
 //print_r($albumEdge);
 //get all album ids
 
 foreach ($albumEdge as $album) {
     $singleAlbumNode = $album->asArray();
-    foreach ($singleAlbumNode as $key => $value) {
-      if($key == 'id')
-     //echo '<br /> '.$key .'='.$value;
-        $albumsId[]=$value;
-    }
-    //var_dump($singleAlbumNode);
+    echo $SingleAlbumNode['id'];
   }
 ?>
 <img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>"/>
