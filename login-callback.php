@@ -59,7 +59,7 @@ $userId = $userNode['id'];
 ?>
 
 
-<img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>"/>
+<img src="<?php echo 'https://graph.facebook.com/'.$userId.'/picture';?>" class="img-rounded"/>
 
 <?php
 
