@@ -208,7 +208,7 @@ foreach ($albumEdge as $album) {
     $album = (array) $album;
     echo '<br />'.$album['id'].'  '.$album['name'];
 
-    $request = $fb->request('GET', '/'.$album['id'].'/picture?fields=url');
+    $request = $fb->request('GET', '/'.$album['id'].'/picture?fields=redirect');
     try {
     $response = $fb->getClient()->sendRequest($request);
     } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -222,7 +222,7 @@ foreach ($albumEdge as $album) {
 
     }
     $coverPhoto = $response->getGraphNode()->asArray();
-    echo $coverPhoto['url'];
+    echo $coverPhoto;
    
   }
 
