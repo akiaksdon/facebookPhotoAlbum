@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
   <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
 
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+  <script src="js/bootstrap-image-gallery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  </head>
@@ -137,19 +141,15 @@ foreach ($albumEdge as $album) {
   }
 ?>
 <div id="links">
-    <a href="images/banana.jpg" title="Banana" data-gallery>
+    <a href="http://i.imgur.com/GVKq51x.jpg" title="Banana" data-gallery>
         <img src="http://i.imgur.com/GVKq51x.jpg" alt="Banana">
     </a>
-    <a href="images/apple.jpg" title="Apple" data-gallery>
+    <a href="http://i.imgur.com/GVKq51x.jpg" title="Apple" data-gallery>
         <img src="http://i.imgur.com/GVKq51x.jpg" alt="Apple">
     </a>
-    <a href="images/orange.jpg" title="Orange" data-gallery>
+    <a href="http://i.imgur.com/GVKq51x.jpg" title="Orange" data-gallery>
         <img src="http://i.imgur.com/GVKq51x.jpg" alt="Orange">
     </a>
 </div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-<script src="js/bootstrap-image-gallery.min.js"></script>
  </body>
 </html>
