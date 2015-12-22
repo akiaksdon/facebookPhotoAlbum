@@ -141,8 +141,8 @@ foreach ($albumEdge as $album) {
   }
 ?>
 <div id="links">
-    <a href="http://i.imgur.com/GVKq51x.jpg" title="Banana" data-gallery>
-        <img src="http://i.imgur.com/GVKq51x.jpg" alt="Banana">
+    <a href="<?php echo 'https://graph.facebook.com/189149171173611/picture';?>" title="Banana" data-gallery>
+        <img src="<?php echo 'https://graph.facebook.com/189149171173611/picture';?>" alt="Banana">
     </a>
     <a href="http://i.imgur.com/GVKq51x.jpg" title="Apple" data-gallery>
         <img src="http://i.imgur.com/GVKq51x.jpg" alt="Apple">
