@@ -223,7 +223,7 @@ foreach ($albumEdge as $album) {
     }
     $AlbumCoverUrl= $response->getGraphNode(); 
     ?>
-    <img src="<?php echo $AlbumCoverUrl;?>" />
+    <img src="<?php echo '.$AlbumCoverUrl.';?>" />
   <?php
   }
 
