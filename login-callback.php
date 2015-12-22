@@ -209,7 +209,7 @@ foreach ($albumEdge as $album) {
     echo '<br />'.$album['id'].'  '.$album['name'];
 
     ?>
-    <img src="<?php echo 'https://graph.facebook.com/'.$album['id'].'/picture?type=album';?>" />
+    <img class="img-circle" src="<?php echo 'https://graph.facebook.com/'.$album['id'].'/picture';?>" />
   <?php
   }
 
