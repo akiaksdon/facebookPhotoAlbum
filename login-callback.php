@@ -228,7 +228,7 @@ foreach ($albumEdge as $album) {
 
       foreach ( $albumPhotos as $photo ) {
                       $photo = (array) $photo;
-                      if ( $album['cover_photo'] == $photo['id'] ) {
+                      if ( $album['cover_photo']['id'] == $photo['id'] ) {
                         $coverPhoto = $photo['source'];
     ?>
     <img src="<?php echo $coverPhoto;?>">
