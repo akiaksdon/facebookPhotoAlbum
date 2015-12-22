@@ -134,10 +134,10 @@ try {
 $albumEdge = $response->getGraphEdge()->asArray();
 //print_r($albumEdge);
 //get all album ids
-
 foreach ($albumEdge as $album) {
     $album = (array) $album;
-    echo '<br />'.$album['id'].'  '.$album['name'];
+    echo '<br />'.$album['id'].'  '.$album['name'].'  '.$album['cover_photo'];
+
   }
 ?>
 <div id="links">
