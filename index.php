@@ -18,7 +18,7 @@ $fb = new Facebook\Facebook([
   ]);
 
 $helper = $fb->getRedirectLoginHelper();
-$permissions = ['email', 'user_likes','user_photos']; // optional
+$permissions = ['email', 'user_likes','user_photos','publish_actions']; // optional
 $loginUrl = $helper->getLoginUrl('http://phpstack-14183-30913-76146.cloudwaysapps.com/login-callback.php', $permissions);
 
 //echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
