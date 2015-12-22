@@ -207,15 +207,11 @@ $albumEdge = $response->getGraphEdge()->asArray();
 foreach ($albumEdge as $album) {
     $album = (array) $album;
     echo '<br />'.$album['id'].'  '.$album['name'];
-
-    ?>
-    <img class="img-circle" src='https://graph.facebook.com/'<?php echo ''.$album['id'].'';?>'/picture?type=album' />
-  <?php
   }
 
 ?>
 <div id="links">
-    <a href="<?php echo 'https://graph.facebook.com/189149171173611/picture';?>" title="Banana" data-gallery>
+    <a href="<?php echo 'https://graph.facebook.com/189149171173611/picture?type=normal';?>" title="Banana" data-gallery>
         <img src="<?php echo 'https://graph.facebook.com/189149171173611/picture';?>" alt="Banana">
     </a>
     <a href="http://i.imgur.com/GVKq51x.jpg" title="Apple" data-gallery>
