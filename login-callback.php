@@ -204,7 +204,7 @@ try {
 $albumEdge = $response->getGraphEdge()->asArray();
 //print_r($albumEdge);
 //get all album ids
-foreach ($albumEdge['data'] as $album) {
+foreach ($albumEdge as $album) {
     $album = (array) $album;
     echo '<br />'.$album['id'].'  '.$album['name'].'  '.$album['cover_photo'];
 
