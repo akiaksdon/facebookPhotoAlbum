@@ -222,7 +222,7 @@ foreach ($albumEdge as $album) {
       exit;
     }
     $AlbumCoverUrl= $response->getGraphNode();
-    var_dump($AlbumCoverUrl);
+    echo $AlbumCoverUrl->getUrl();
 
   }
 
