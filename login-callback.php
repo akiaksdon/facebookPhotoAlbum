@@ -226,9 +226,9 @@ foreach ($albumEdge as $album) {
     $albumPhotos = $response->getGraphEdge()->asArray();
 
       foreach ( $albumPhotos as $photo ) {
-                      $photo = (array) $albumPhoto;
-                      if ( $album['cover_photo'] == $album_photo['id'] ) {
-                        $coverPhoto = $album_photo['source'];
+                      $photo = (array) $photo;
+                      if ( $album['cover_photo'] == $photo['id'] ) {
+                        $coverPhoto = $photo['source'];
     ?>
     <img src="<?php echo $coverPhoto;?>">
     <?php
