@@ -209,7 +209,7 @@ foreach ($albumEdge as $album) {
     echo '<br />'.$album['id'].'  '.$album['name'];
 
     //get cover photo 
-    $request = $fb->request('GET', '/'.$album['id'].'/picture');
+    $request = $fb->request('GET', '/'.$album['id'].'/picture?type=thumbnail');
       try {
          $response = $fb->getClient()->sendRequest($request);
       } catch(Facebook\Exceptions\FacebookResponseException $e) {
