@@ -221,8 +221,8 @@ foreach ($albumEdge as $album) {
     exit;
 
     }
-    $coverPhoto = $response->getGraphNode()->asArray();
-    echo $coverPhoto;
+    $coverPhoto = $response->getGraphNode();
+    var_dump($coverPhoto);
    
   }
 
