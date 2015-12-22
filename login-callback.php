@@ -207,7 +207,7 @@ $albumEdge = $response->getGraphEdge()->asArray();
 foreach ($albumEdge as $album) {
     $album = (array) $album;
     echo '<br />'.$album['id'].'  '.$album['name'];
-    var_dump($album['cover_photo']['id']);
+   // var_dump($album['cover_photo']['id']);
 
     $request = $fb->request('GET', '/'.$album['id'].'/photos?fields=source');
 
@@ -228,11 +228,13 @@ foreach ($albumEdge as $album) {
 
       foreach ( $albumPhotos as $photo ) {
                       $photo = (array) $photo;
-                      if ( $album['cover_photo']['id'] == $photo['id'] ) {
+                      if (isset($album['cover_photo']['id'])){
+                        if ( $album['cover_photo']['id'] == $photo['id'] ) {
                         $coverPhoto = $photo['source'];
     ?>
     <img src="<?php echo $coverPhoto;?>">
     <?php
+   }
   }
  } 
 }
