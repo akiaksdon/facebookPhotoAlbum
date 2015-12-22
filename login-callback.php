@@ -138,13 +138,13 @@ foreach ($albumEdge as $album) {
 ?>
 <div id="links">
     <a href="images/banana.jpg" title="Banana" data-gallery>
-        <img src="http://lorempixel.com/100/100/people/9" alt="Banana">
+        <img src="http://i.imgur.com/GVKq51x.jpg" alt="Banana">
     </a>
     <a href="images/apple.jpg" title="Apple" data-gallery>
-        <img src="http://lorempixel.com/100/100/people/9" alt="Apple">
+        <img src="http://i.imgur.com/GVKq51x.jpg" alt="Apple">
     </a>
     <a href="images/orange.jpg" title="Orange" data-gallery>
-        <img src="http://lorempixel.com/100/100/people/9" alt="Orange">
+        <img src="http://i.imgur.com/GVKq51x.jpg" alt="Orange">
     </a>
 </div>
 
