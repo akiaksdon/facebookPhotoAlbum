@@ -204,9 +204,9 @@ try {
 $albumEdge = $response->getGraphEdge()->asArray();
 //print_r($albumEdge);
 //get all album ids
-foreach ($albumEdge as $album) {
+foreach ($albumEdge['data'] as $album) {
     $album = (array) $album;
-    echo '<br />'.$album['id'].'  '.$album['name'];
+    echo '<br />'.$album['id'].'  '.$album['name'].'  '.$album['cover_photo'];
 
     $request = $fb->request('GET', '/'.$album['id'].'/photos?fields=source');
 
