@@ -221,7 +221,7 @@ foreach ($albumEdge as $album) {
        echo 'Facebook SDK returned an error: ' . $e->getMessage();
       exit;
     }
-    $AlbumCoverUrl= $response->getGraphNode();
+    $AlbumCoverUrl= $response->getGraphEdge();
     var_dump($AlbumCoverUrl);
 
   }
