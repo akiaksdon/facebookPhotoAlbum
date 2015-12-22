@@ -208,28 +208,35 @@ foreach ($albumEdge as $album) {
     $album = (array) $album;
     echo '<br />'.$album['id'].'  '.$album['name'];
 
-    $request = $fb->request('GET', '/'.$album['id'].'/picture?type=small');
-    try {
-    $response = $fb->getClient()->sendRequest($request);
-    } catch(Facebook\Exceptions\FacebookResponseException $e) {
-    // When Graph returns an error
-    echo 'Graph returned an error: ' . $e->getMessage();
-    exit;
-    } catch(Facebook\Exceptions\FacebookSDKException $e) {
-    // When validation fails or other local issues
-    echo 'Facebook SDK returned an error: ' . $e->getMessage();
-    exit;
+    $request = $fb->request('GET', '/'.$album['id'].'/photos?fields=source');
 
-    }
-    $coverPhoto = $response->getGraphNode();
-    var_dump($coverPhoto);
+    try {
+      $response = $fb->getClient()->sendRequest($request);
+      } catch(Facebook\Exceptions\FacebookResponseException $e) {
+       // When Graph returns an error
+       echo 'Graph returned an error: ' . $e->getMessage();
+       exit;
+      } catch(Facebook\Exceptions\FacebookSDKException $e) {
+     // When validation fails or other local issues
+        echo 'Facebook SDK returned an error: ' . $e->getMessage();
+        exit;
+       } 
+
+
+    $albumPhotos = $response->getGraphEdge()->asArray();
+
+      foreach ( $albumPhotos as $photo ) {
+                      $photo = (array) $albumPhoto;
+                      if ( $album['cover_photo'] == $album_photo['id'] ) {
+                        $coverPhoto = $album_photo['source'];
     ?>
     <img src="<?php echo $coverPhoto;?>">
     <?php
-   
   }
-
+ } 
+}
 ?>
+
 <div id="links">
     <a href="<?php echo 'https://graph.facebook.com/189149171173611/picture?fields=url';?>" title="Banana" data-gallery>
         <img src="<?php echo 'https://graph.facebook.com/189149171173611/picture?fields=url';?>" alt="Banana">
