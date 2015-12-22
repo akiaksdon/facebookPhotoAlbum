@@ -223,6 +223,9 @@ foreach ($albumEdge as $album) {
     }
     $coverPhoto = $response->getGraphNode();
     var_dump($coverPhoto);
+    ?>
+    <img src="<?php echo $coverPhoto;?>" alt="happy">
+    <?php
    
   }
 
